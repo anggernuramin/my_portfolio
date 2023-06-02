@@ -9,13 +9,13 @@ burgerMenu.addEventListener("click", () => {
 });
 
 // script untuk menghilangkan nav dengan clict dimanapun
-window.addEventListener("click", function (e) {
-  // artinya jika kitayang klik bukan nav atau juga bukan burgermenu maka akan menghapus hamburger aktif,agar silang nmenjadi hamburger menu ,dan add hidden ke nav agar navigasi hidden
-  if (e.target != nav && e.target != burgerMenu) {
-    burgerMenu.classList.remove("hamburger-active");
-    nav.classList.add("hidden");
-  }
-});
+//window.addEventListener("click", function (e) {
+// artinya jika kitayang klik bukan nav atau juga bukan burgermenu maka akan menghapus hamburger aktif,agar silang nmenjadi hamburger menu ,dan add hidden ke nav agar navigasi hidden
+//if (e.target != nav && e.target != burgerMenu) {
+//  burgerMenu.classList.remove("hamburger-active");
+// nav.classList.add("hidden");
+//}
+//});
 
 // script untuk navbar fixed jika halam discroll dan diguakan untuk meemunculkan wa contact
 const waContact = document.querySelector("#wa-contact");
@@ -91,4 +91,10 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
   toggleDarkMode.checked = "false";
   console.log("light");
   iconDarkMode.innerHTML = iconDark();
+}
+
+// function hande submit form
+function submitForm(e) {
+  e.preventDefault();
+  alert("Terima kasih, pesan anda kami terima");
 }
