@@ -9,13 +9,13 @@ burgerMenu.addEventListener("click", () => {
 });
 
 // script untuk menghilangkan nav dengan clict dimanapun
-//window.addEventListener("click", function (e) {
-// artinya jika kitayang klik bukan nav atau juga bukan burgermenu maka akan menghapus hamburger aktif,agar silang nmenjadi hamburger menu ,dan add hidden ke nav agar navigasi hidden
-//if (e.target != nav && e.target != burgerMenu) {
-//  burgerMenu.classList.remove("hamburger-active");
-// nav.classList.add("hidden");
-//}
-//});
+// window.addEventListener("click", function (e) {
+//   // artinya jika kitayang klik bukan nav atau juga bukan burgermenu maka akan menghapus hamburger aktif,agar silang nmenjadi hamburger menu ,dan add hidden ke nav agar navigasi hidden
+//   if (e.target != nav && e.target != burgerMenu) {
+//     burgerMenu.classList.remove("hamburger-active");
+//     nav.classList.add("hidden");
+//   }
+// });
 
 // script untuk navbar fixed jika halam discroll dan diguakan untuk meemunculkan wa contact
 const waContact = document.querySelector("#wa-contact");
@@ -93,8 +93,33 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
   iconDarkMode.innerHTML = iconDark();
 }
 
-// function hande submit form
-function submitForm(e) {
+// function hande submit form.dimana user jika mengisi form langsung masuk ke akun gmail kami,
+// kita bisa memanfaatkan api smptpJS.com
+// kita harus membuat akun disini https://app.elasticemail.com/login agar kita bisa menggunakan smtpJS
+
+const form = document.querySelector("#submitForm");
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-  alert("Terima kasih, pesan anda kami terima");
-}
+  // penulisan object harus seusai yang sudah diset di WEB emailJS
+  const params = {
+    nama: document.getElementById("nama").value,
+    email: document.getElementById("email").value,
+    pesan: document.getElementById("pesan").value,
+  };
+
+  const emailID = "service_7am0nqr";
+  const templateID = "template_l5sr575";
+
+  // MENGIRIM form ke emailJS
+  emailjs
+    .send(emailID, templateID, params)
+    .then((response) => {
+      document.getElementById("nama").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("pesan").value = "";
+      alert("Your message send succesful1y");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});

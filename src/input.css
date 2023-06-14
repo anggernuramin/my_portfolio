@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* menu hamburger menu */
+.hamburger-active span:nth-child(1) {
+  @apply translate-x-[2px] -translate-y-[8px] rotate-[45deg];
+}
+.hamburger-active span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+/* menu navbar fixed,jika halamn discroll mk navbar fixed */
+@layer components {
+  .navbar-fixed {
+    @apply fixed top-0 right-0 left-0 z-[9999] w-full shadow-md backdrop-blur-sm dark:shadow-slate-800;
+  }
+  .card-sertification {
+    @apply overflow-hidden rounded-md  bg-white shadow-md dark:bg-slate-900;
+  }
+  .card-blog {
+    @apply block rounded-md border shadow-md dark:border-slate-700 md:flex;
+  }
+}

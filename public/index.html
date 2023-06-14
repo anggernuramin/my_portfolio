@@ -27,6 +27,15 @@
       document.documentElement.classList.remove('dark')
       }
     </script>
+    <!-- Script untuk send form to email -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init("toke8Uxn8HXNzcTQf");
+   })();
+</script>
   </head>
   <body>
     <!-- navbar start -->
@@ -62,7 +71,7 @@
                   <li class="group">
                     <a href="#sertification" class="font-semibold lg:font-medium capitalize flex text-dark dark:text-slate-100 mb-3 lg:mb-0 text-base lg:pr-5 md:pr-4 lg:text-lg group-hover:text-primary transition duration-300 ease-in-out">sertification</a>
                   </li>
-                  <li class="group md:border-r border-r-0">
+                  <li class="group">
                     <a href="#contact" class="font-semibold lg:font-medium capitalize flex text-dark dark:text-slate-100 mb-3 lg:mb-0 text-base lg:pr-5 md:pr-4 lg:text-lg group-hover:text-primary transition duration-300 ease-in-out">contact</a>
                   </li>
                   <li class="flex sm:ml-0 px-4 py-1 rounded-md -mt-[5px] cursor-pointer md:justify-start items-center bg-slate-800 dark:bg-slate-300 text-slate-100 ml-2">
@@ -88,8 +97,7 @@
             <h4 class="font-semibold text-slate-600 mb-4 lg:text-xl">Mahasiswa & <span class="font-semibold text-dark lg:font-bold dark:text-slate-200">Front end Developer</span></h4>
             <p class="text-base font-medium text-slate-600 mb-5 leading-relaxed">I am an innovative frontend developer who crafts visually stunning and user-friendly websites, transforming ideas into captivating web interfaces with expertise in the latest frontend technologies.</p>
             <div class="flex justify-start items-center">
-              <button class="text-slate-50 font-bold text-center rounded-full bg-primary py-2 md:px-7 px-4 outline-none transition duration-300 border-2 border-transparent mr-4 hover:border-primary hover:bg-white hover:text-dark"><a href="https://wa.me/6285856064117" target="_blank">Contact me</a>
-                
+              <button class="text-slate-50 font-bold text-center rounded-full bg-primary py-2 md:px-7 px-4 outline-none transition duration-300 border-2 border-transparent mr-4 hover:border-primary hover:bg-white hover:text-dark"><a href="./cv/Resume - Angger-Nur-Amin.pdf" target="_blank" download="CV-Angger-Nur-Amin" >Download CV</a>
               </button>
               <button class="text-dark font-bold text-center rounded-full bg-white py-2 md:px-7 px-4 hover:bg-primary hover:text-white hover:border-transparent outline-none transition duration-300 border-2 border-primary">
                 <a href="#project">Project me</a>
@@ -247,7 +255,7 @@
               <img src="images/blog/projectTravel.PNG" alt="project travel" class="w-full md:w-[450px]" />
               <div class="px-4 self-center">
                 <div class="flex justify-start items-center mt-3 mb-1">
-                  <h3 class="font-bold text-xl text-dark mr-3 capitalize">web travel</h3>
+                  <h3 class="font-bold text-xl text-dark mr-3 capitalize dark:text-slate-200">web travel</h3>
                   <p class="text-md font-semibold text-slate-500">Html | Css | Js</p>
                 </div>
                 <p class="text-base font-medium text-slate-500 text-left mb-5">Travel Blog: Discover breathtaking destinations, travel tips, and captivating stories that inspire your wanderlust. Embark on a virtual journey and fuel your passion for exploration through our web travel blog.</p>
@@ -260,10 +268,10 @@
               <img src="images/blog/blogAPp.png" alt="Blog App" class="w-full md:w-[450px]" />
               <div class="px-4 self-center">
                 <div class="flex justify-start items-center mt-3 mb-1">
-                  <h3 class="font-bold text-xl text-dark mr-3 capitalize">Blog App</h3>
+                  <h3 class="font-bold text-xl text-dark mr-3 capitalize dark:text-slate-200">Blog App</h3>
                   <p class="text-md font-semibold text-slate-500">Html | Tailwind | React js</p>
                 </div>
-                <p class="text-base font-medium text-slate-500 text-left mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae animi aliquam a molestias ut laborum deleniti doloribus cum est possimus.</p>
+                <p class="text-base font-medium text-slate-500 text-left mb-5">Web Blog App is a platform for creating and publishing blogs online with intuitive features. Users can write, edit, and share engaging content easily.</p>
               </div>
             </div>
           </div>
@@ -273,7 +281,7 @@
               <img src="images/project/identifikasiJenisBUnga.PNG" alt="Identifikasi jenis bunga" class="w-full md:w-[450px]" />
               <div class="px-4 self-center">
                 <div class="flex justify-start items-center mt-3 mb-1">
-                  <h3 class="font-bold text-xl text-dark mr-3 capitalize">Identifying Flower Types</h3>
+                  <h3 class="font-bold text-xl text-dark mr-3 capitalize dark:text-slate-200">Identifying Flower Types</h3>
                   <p class="text-md font-semibold text-slate-500">Python</p>
                 </div>
                 <p class="text-base font-medium text-slate-500 text-left mb-5">Explore the world of flowers with information and guides to help identify various flower types. Discover unique characteristics, scientific names, and care tips to gain a better understanding of the beauty and diversity of the floral world.</p>
@@ -327,13 +335,13 @@
             <h2 class="font-bold text-dark text-3xl text-center capitalize mb-2 dark:text-white">Get in touch</h2>
         </div>
         <div class="content-scroll w-full px-4 lg:w-1/2 lg:mx-auto">
-          <form action="" onsubmit="submitForm()">
+          <form  id="submitForm">
             <label for="nama" class="text-base font-medium text-primary mb-1 lg:text-lg">Nama</label>
             <input required type="text" id="nama" name="nama" class="block outline-none py-2 px-4 border-slate-500 border ring-1 dark:placeholder:text-white w-full rounded-md focus:shadow-lg focus:border-primary focus:outline-none focus:ring-primary focus:ring-1 placeholder:text-md mb-3" placeholder="Nama">
             <label for="email" class="text-base font-medium text-primary capitalize lg:text-lg">email</label>
             <input required type="text" id="email" name="email" class="block border py-2 px-4 border-slate-500 w-full rounded-md focus:shadow-lg focus:border-primary focus:outline-none focus:ring-primary focus:ring-1 placeholder:text-md mb-3" placeholder="email">
             <label for="pesan" class="block text-base font-medium text-primary capitalize lg:text-lg">pesan</label>
-            <textarea required name="" id="" cols="70%" rows="6" class="block border py-2 px-4 border-slate-500 w-full rounded-md focus:shadow-lg focus:border-primary focus:outline-none focus:ring-primary focus:ring-1 placeholder:text-md mb-3" placeholder="deskripsi pesan ..."></textarea>
+            <textarea required name="" id="pesan" cols="70%" rows="6" class="block border py-2 px-4 border-slate-500 w-full rounded-md focus:shadow-lg focus:border-primary focus:outline-none focus:ring-primary focus:ring-1 placeholder:text-md mb-3" placeholder="deskripsi pesan ..."></textarea>
             <button type="submit" id="kirim"  class="text-slate-50 font-semibold text-center rounded-md bg-primary py-[5px] text-xl md:px-7 px-4 outline-none transition duration-300 border-2 border-transparent mr-4 hover:border-primary hover:bg-white hover:text-dark ">Send</button>
           </form>
         </div>
@@ -451,5 +459,7 @@
   <!-- js aos -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script/animationAos.js"></script>
+
+  <!-- script main js -->
   <script src="script/script.js"></script>
 </html>
